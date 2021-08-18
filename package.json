@@ -1,0 +1,19 @@
+{
+  "name": "manage-digital-ocean-managed-database-trusted-sources-gh-action",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "ncc build ./src/index.js",
+    "test": "echo \"Testing is doubting\"",
+    "start": "node ./dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@actions/core": "^1.4.0",
+    "@vercel/ncc": "^0.29.1",
+    "node-fetch": "^2.6.1"
+  }
+}

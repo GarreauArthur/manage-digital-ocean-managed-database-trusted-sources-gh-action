@@ -1,0 +1,15 @@
+name: 'Managed trusted sources of managed database (digital ocean)'
+description: 'Greet someone and record the time'
+inputs:
+  action:
+    description: 'add or remove'
+    required: true
+  database_id:
+    description: 'The uuid of the managed database'
+    required: true
+  digitalocean_token:
+    description: 'Digital Access Token'
+    required: true
+runs:
+  using: 'node14'
+  main: 'dist/index.js'
