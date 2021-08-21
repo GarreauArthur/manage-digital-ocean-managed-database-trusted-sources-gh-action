@@ -26,3 +26,9 @@ jobs:
           action: "add"
           database_id: ${{ secrets.DATABASE_ID }}
           digitalocean_token: ${{ secrets.DIGITALOCEAN_TOKEN }}
+      - name: "Remove IP"
+        uses: GarreauArthur/manage-digital-ocean-managed-database-trusted-sources-gh-action@main
+        with:
+          action: "remove"
+          database_id: ${{ secrets.DATABASE_ID }}
+          digitalocean_token: ${{ secrets.DIGITALOCEAN_TOKEN }}
