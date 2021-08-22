@@ -1,5 +1,8 @@
 name: 'Managed trusted sources of managed database (digital ocean)'
 description: 'Greet someone and record the time'
+branding:
+  icon: database
+  color: blue
 inputs:
   action:
     description: 'add or remove'
