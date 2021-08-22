@@ -1,5 +1,5 @@
 name: 'Managed trusted sources of managed database (digital ocean)'
-description: 'Greet someone and record the time'
+description: 'Add or remove your runner public IP address to the trusted source of your digital ocean managed database'
 branding:
   icon: database
   color: blue
