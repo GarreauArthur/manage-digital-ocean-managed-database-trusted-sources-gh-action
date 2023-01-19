@@ -99,7 +99,7 @@ async function main() {
 }
 
 try {
-  main();
+  main().catch(error => core.setFailed(error.message));
 } catch (error) {
   core.setFailed(error.message);
 }
