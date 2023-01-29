@@ -4,7 +4,7 @@ const core = require('@actions/core');
 async function getIpAddress() {
 
   const response = await fetch('https://api.ipify.org');
-  if ( !response.ok ) {
+  if (!response.ok) {
     throw new Error("Couldn't get IP address");
   }
   return await response.text();
@@ -16,9 +16,9 @@ async function getIpAddress() {
  * returns its index, otherwise, the function returns -1;
  */
 function findIpInRules(ipAddress, rules) {
-  for ( let i = 0; i < rules.length; i++ ) {
+  for (let i = 0; i < rules.length; i++) {
     const rule = rules[i];
-    if ( rule.type === 'ip_addr' && rule.value === ipAddress ) {
+    if (rule.type === 'ip_addr' && rule.value === ipAddress) {
       console.log("IP address already inside");
       return i;
     }
@@ -49,12 +49,12 @@ async function main() {
     },
   });
 
-  if ( !resp.ok ) {
+  if (!resp.ok) {
     throw Error("Error while trying to get the list of trusted sources");
   }
 
   let firewallRules = (await resp.json()).rules;
-  if ( !firewallRules ) {
+  if (!firewallRules) {
     throw Error("Missing firewall rules");
   }
 
@@ -62,14 +62,14 @@ async function main() {
   // Checking if the IP is already in the trusted sources
   let indexOfIpInRules = findIpInRules(runnerIpAddress, firewallRules);
 
-  if ( indexOfIpInRules === -1 && ACTION === 'add') {
+  if (indexOfIpInRules === -1 && ACTION === 'add') {
 
     firewallRules.push({
       type: 'ip_addr',
       value: runnerIpAddress,
     });
 
-  } else if ( indexOfIpInRules !== -1 && ACTION === 'remove' ) {
+  } else if (indexOfIpInRules !== -1 && ACTION === 'remove') {
 
     firewallRules.splice(indexOfIpInRules, 1);
 
@@ -92,14 +92,10 @@ async function main() {
     body: JSON.stringify(trustedSources),
   });
 
-  if ( !respPut.ok ) {
+  if (!respPut.ok) {
     throw new Error("Couldn't update trusted sources");
   }
 
 }
 
-try {
-  main().catch(error => core.setFailed(error.message));
-} catch (error) {
-  core.setFailed(error.message);
-}
+main().catch(error => core.setFailed(error.message));
