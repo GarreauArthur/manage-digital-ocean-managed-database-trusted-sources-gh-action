@@ -1,5 +1,5 @@
 {
-  "name": "manage-digital-ocean-managed-database-trusted-sources-gh-action",
+  "name": "manage-digital-ocean-managed-database-trusted-sources-gh-action-nodev20",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -13,7 +13,6 @@
   "license": "ISC",
   "dependencies": {
     "@actions/core": "^1.4.0",
-    "@vercel/ncc": "^0.29.1",
-    "node-fetch": "^2.6.1"
+    "@vercel/ncc": "^0.38.1"
   }
 }

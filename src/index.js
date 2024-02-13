@@ -1,4 +1,3 @@
-const fetch = require('node-fetch');
 const core = require('@actions/core');
 
 async function getIpAddress() {

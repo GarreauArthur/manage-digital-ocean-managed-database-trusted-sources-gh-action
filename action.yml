@@ -1,4 +1,4 @@
-name: 'Managed trusted sources of managed database (digital ocean)'
+name: 'Managed trusted sources of managed database (digital ocean) - node v20'
 description: 'Add or remove your runner public IP address to the trusted source of your digital ocean managed database'
 branding:
   icon: database
@@ -14,5 +14,5 @@ inputs:
     description: 'Digital Access Token'
     required: true
 runs:
-  using: 'node12'
+  using: 'node20'
   main: 'dist/index.js'
