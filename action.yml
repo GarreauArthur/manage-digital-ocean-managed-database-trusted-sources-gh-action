@@ -1,4 +1,4 @@
-name: 'Managed trusted sources of managed database (digital ocean) - node v20'
+name: 'Managed trusted sources of managed database (digital ocean) - node_v20'
 description: 'Add or remove your runner public IP address to the trusted source of your digital ocean managed database'
 branding:
   icon: database
